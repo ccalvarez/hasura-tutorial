@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const Pixel = ({ id, color, newColor }) => {
   const [pixelColor, changeColor] = useState(color);

@@ -1,11 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ApolloProvider } from '@apollo/react-hooks';
 
-import "./index.css";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import connection from './Connection.js';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+// console.log(process.env.NODE_ENV);
+// console.log(process.env.REACT_APP_HASURA_API);
+
+ReactDOM.render(
+  <ApolloProvider client={connection}>
+    <App />
+  </ApolloProvider>,
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
